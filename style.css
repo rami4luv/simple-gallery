@@ -1,0 +1,31 @@
+* {
+  margin: 0 auto;
+}
+
+body{
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ul {
+  position: absolute;
+  bottom: 0;
+  left: 370px;
+  text-decoration: none;
+  margin-top: 420px;
+  margin: auto;
+
+}
+
+li {
+  display: inline-block;
+  margin: 10px;
+  font-size: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
