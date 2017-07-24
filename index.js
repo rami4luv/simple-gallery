@@ -1,41 +1,51 @@
 $(document).ready(function () {
-  $.getJSON("data.json", function (array) {
-    var $ul = $("<ul></ul>");
+  var $body = $('body');
 
-    array.forEach(function (item, index) {
+  $.getJSON('data.json', function(array) {
+    // we create a jQuery h1 element for the title
+    var $h1 = $('<h1>Welcome</h1>');
+    var $link = $('<a target="_blank" id="author-link"></a>');
 
-      var $li = $("<li>" + (index + 1) + "</li>");
+    // we create a jQuery list element for the page
+    var $ul = $('<ul id="pager"></ul>');
 
+    // for each items in the array
+    // for (var index = 0; index < array.length; index++) {}
+    array.forEach(function(item, index) {
+      // we create a jQuery list item
+      var $li = $('<li>' + (index + 1) + '</li>');
 
+      $li.on('click', function() {
+        $h1.text(item.title);
+        $body.css('background-image', 'url('+item.src+')');
+        $link
+          .text('Photos by ' + item.author)
+          .attr('href', item.link);
 
+        $('li').removeClass('active');
+        $(this).addClass('active');
+      });
 
+      // that we add to the list ($ul)
       $ul.append($li);
-      /*$("div").html("<img src=" + array[0].src + ">");*/
 
-
-
-
-
+      if (index === 0) $li.trigger('click');
     });
-    var $div = $("<div></div>");
-      var $h1 = $("<h1> Welcome </h1>");
-      $div.append($h1);
 
-      $("body").append($ul, $div);
+    $('.next').on('click',function() {
+      var $liactive = $('li.active');
+      var $linext = $liactive.next();
+      $linext.trigger('click');
+    });
 
-      $("li").first().addClass("active");
-      $("body").css("background-image", "url('" + array[0].src +"')");
+    $('.prev').on('click',function() {
+      var $liactive = $('li.active');
+      var $liprev = $liactive.prev();
+      $liprev.trigger('click');
+    });
 
-
-      $("li").on("click", function () {
-        var rami = parseInt($(this).text())-1;
-        $("li").removeClass("active");
-        $(this).addClass("active");
-
-        $h1.text(array[rami].title);
-        $("body").css("background-image", "url('" + array[rami].src +"')")
-              });
-
+    $('body').append($h1, $ul, $link);
 
   });
+
 });

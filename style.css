@@ -1,58 +1,102 @@
 * {
-  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-body{
+html,
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
   background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-position: center;
+  color: #333;
+  font-family: sans-serif;
 }
 
-ul {
+a,
+a:link,
+a:hover {
+  color: #336;
+}
+
+h1,
+#pager,
+#author-link {
   position: absolute;
-  bottom: 0;
-  left: 370px;
-  text-decoration: none;
-  margin-top: 420px;
-  margin: auto;
-
 }
 
-li {
-  display: inline-block;
-  margin: 10px;
-  font-size: 40px;
-  border: 5px solid black;
-  border-radius: 5px;
-  cursor: pointer;
+h1,
+#pager li,
+#author-link {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-h1 {
+h1,
+#pager {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  left: 10%;
   text-align: center;
 }
 
-.btn1 {
-  background-color: #212F3D;
+h1 {
+  top: 10%;
 }
 
-.btn2 {
-  background-color: #34495E;
+#pager {
+  list-style: none;
+  bottom: 10%;
+  display: flex;
+  justify-content: center;
 }
 
-.btn3 {
-  background-color: #5D6D7E;
+#pager li {
+  cursor: pointer;
+  flex-direction: row;
+  font-size: 12px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid currentColor;
+  margin-right: 3px;
+  border-radius: 3px;
 }
 
-.btn4 {
-  background-color: #566573;
+#author-link {
+  display: inline-block;
+  bottom: 3px;
+  right: 3px;
+  padding: 1px 3px;
 }
 
-.btn5 {
-  background-color: gray;
+#pager li.active {
+  background-color: rgba(244, 66, 78, 0.5);
 }
 
-.active {
-  background-color: red;
+.clickdiv {
+  cursor:pointer;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  font-size: 50px;
+  line-height: 100vh;
+  color:red;
 }
 
+.clickdiv.next {
+  top:0;
+  right:0;
+  text-align: right;
+}
+
+.clickdiv.prev {
+  top:0;
+  left:0;
+}
