@@ -23,9 +23,14 @@ $(document).ready(function () {
 
       $("body").append($ul, $div);
 
+      $("li").first().addClass("active");
+      $("body").css("background-image", "url('" + array[0].src +"')");
+
 
       $("li").on("click", function () {
         var rami = parseInt($(this).text())-1;
+        $("li").removeClass("active");
+        $(this).addClass("active");
 
         $h1.text(array[rami].title);
         $("body").css("background-image", "url('" + array[rami].src +"')")

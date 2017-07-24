@@ -23,9 +23,36 @@ li {
   display: inline-block;
   margin: 10px;
   font-size: 40px;
+  border: 5px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 h1 {
   text-align: center;
+}
+
+.btn1 {
+  background-color: #212F3D;
+}
+
+.btn2 {
+  background-color: #34495E;
+}
+
+.btn3 {
+  background-color: #5D6D7E;
+}
+
+.btn4 {
+  background-color: #566573;
+}
+
+.btn5 {
+  background-color: gray;
+}
+
+.active {
+  background-color: red;
 }
 
